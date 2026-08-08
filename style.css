@@ -196,7 +196,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding-top :150px;
   box-sizing: border-box;
 }
@@ -242,7 +242,7 @@ img {
   letter-spacing: 4px;
   color: #e0e0e0;
   text-align: left;
-  display: block;
+
 }
 /* --- PC（画面幅 1024px 以上）のときだけ適用するスタイル --- */
 @media screen and (min-width: 1024px) {
