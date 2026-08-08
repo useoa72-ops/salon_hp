@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUXE SALON 美容室向けプロフェッショナルパートナー</title>
-  <!-- Google Fonts: 英語フォントにセリフ体（高級感）を導入 -->
+  <title>FAV SALON</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
@@ -12,35 +11,49 @@
 </head>
 <body>
 
-  <!-- ヘッダー -->
   <header class="header">
-    <div class="logo">LUXE SALON</div>
-    <button class="hamburger" aria-label="メニュー">
-      <span></span>
-      <span></span>
-    </button>
+    <div class="logo">
+        <a href="index.html">FAV SALON</a>
+    </div>
+    
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#concept">CONCEPT</a></li>
+        <li><a href="company.html">COMPANY</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <a href="reserve.html" class="btn-reserve">WEB RESERVATION</a>
+      <button class="hamburger" aria-label="メニュー">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- メインビジュアル -->
-  <section class="hero">
-    <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800');">
-      <div class="hero-overlay"></div>
-      <div class="hero-text">
-        <p class="en-title">Connecting Beauty,<br>Expanding Value.</p>
-        <p class="ja-title">美を繋ぐ、価値を広げる</p>
+  <main>
+     <section class="main">
+    <div class="main-image" style="background-image: url(./main.jpg);">
+      <div class="main-overlay"></div>
+      <div class="main">
+        <p class="en-title">Your Unique Beauty, <br>EYour Unique Value.</p>
+        <p class="ja-title">あなただけの美を、あなただけの価値を</p>
       </div>
     </div>
   </section>
 
-  <!-- コンセプトメッセージ -->
   <section class="concept">
-    <h2>LUXE SALON は、サロン様の「次の一手」をつくるプロフェッショナル・パートナーです。</h2>
-    <p>情報・人・モノ・サービスをリンクさせて、従来のディーラーの枠を超えた共創型ネットワークを築きます。</p>
+    <h2>自分らしさをあきらめない、大人のための上質空間</h2>
+    <p>FAV SALONは、一人ひとりのお客様と深く向き合う完全予約制サロンです。<br>
+トレンドを追うだけでなく、個性を活かした「再現性の高いスタイル」をご提案。<br>
+丁寧なカウンセリングと厳選されたオーガニック商材で、髪と心の双方を満たす特別な時間を提供します。</p>
   </section>
 
-  <!-- バナーカードエリア（COMPANY / SERVICE / CONTACT） -->
   <section class="card-list">
-    <a href="#" class="card" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800');">
+    <a href="company.html" class="card" style="background-image: url(salonlogo.png);">
       <div class="card-overlay"></div>
       <div class="card-content">
         <h3>COMPANY</h3>
@@ -48,7 +61,7 @@
       </div>
     </a>
 
-    <a href="#" class="card" style="background-image: url('https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800');">
+    <a href="service.html" class="card" style="background-image: url('https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800');">
       <div class="card-overlay"></div>
       <div class="card-content">
         <h3>SERVICE</h3>
@@ -56,37 +69,20 @@
       </div>
     </a>
 
-    <a href="#" class="card" style="background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800');">
+    <a href="contact.html" class="card" style="background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800');">
       <div class="card-overlay"></div>
       <div class="card-content">
         <h3>CONTACT</h3>
         <p>— お問い合わせ</p>
       </div>
     </a>
-  </section>
 
-  <!-- サービス詳細カード（右側画面風のデザイン） -->
-  <section class="service-detail">
-    <div class="section-title-wrap">
-      <span class="sub-line"></span>
-      <h2 class="section-title">OUR SERVICE</h2>
-    </div>
+ 
+  </section> 
+  </main>
 
-    <div class="detail-card">
-      <div class="detail-img">
-        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=800" alt="美容室専売品">
-      </div>
-      <div class="detail-text">
-        <h3>美容室専売品・器具等の卸売</h3>
-        <p class="lead">厳選されたプロフェッショナル商材を、最適な形でお届けします。</p>
-        <ul>
-          <li>サロンの方向性やお客様層に合わせた商品提案</li>
-          <li>新商品の導入支援やスタッフ向け勉強会の開催</li>
-          <li>在庫や発注の業務効率を高めるオペレーション提案</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+
+
 
 </body>
 </html>
