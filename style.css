@@ -218,7 +218,9 @@ img {
   z-index: 2;
   text-align: center;
   padding: 0 20px;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .en-title {
@@ -228,6 +230,7 @@ img {
   letter-spacing: 3px;
   color: #ffffff;
   margin-bottom: 20px;
+  white-space: normal;
 }
 
 .ja-title {
