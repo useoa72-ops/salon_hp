@@ -1,224 +1,531 @@
-/* 全体設定 */
-* {
+@charset "UTF-8";
+
+/* ==========================================================================
+   1. リセット & 共通ベース設定
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  background-color: #121212; /* ダークモード基調 */
-  color: #ffffff;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  line-height: 1.6;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiYo, sans-serif;
+  background-color: #0b0b0b;
+  color: #e5e5e5;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
 }
 
-/* ヘッダー */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* 共通コンテナ */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px 80px;
+}
+
+/* 下層ページ タイトルスタイル */
+.page-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-title h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  font-size: 13px;
+  color: #8a8a8a;
+  letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   2. ヘッダー & ナビゲーション
+   ========================================================================== */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  z-index: 100;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  padding: 0 40px;
+  background-color: rgba(11, 11, 11, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.logo {
+.logo a {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  letter-spacing: 1px;
+  font-size: 26px;
   font-weight: 600;
+  letter-spacing: 3px;
+  color: #ffffff;
 }
 
-.hamburger {
-  width: 40px;
-  height: 40px;
-  background: #1a1a1a;
-  border: none;
-  border-radius: 50%;
+/* ナビゲーションメニュー */
+.nav-menu ul {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-menu a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #b3b3b3;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #ffffff;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* 右側エリア（予約ボタン） */
+.header-right {
+  display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 20px;
+}
+
+/* Web予約ボタン（高級感のあるホバー演出） */
+.btn-reserve {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-reserve:hover {
+  background-color: #ffffff;
+  color: #0b0b0b;
+  border-color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ハンバーガーボタン（将来的なJS拡張用） */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 14px;
+  padding: 0;
 }
 
 .hamburger span {
-  width: 18px;
-  height: 2px;
-  background-color: #fff;
   display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
 }
+
+/* ==========================================================================
+   3. トップページ（Hero, Concept, Cards）
+   ========================================================================== */
 
 /* メインビジュアル */
-.hero {
-  height: 100vh;
+.main, .hero {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
 }
 
-.hero-image {
+.main-image, .hero-image {
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-overlay {
+.main-overlay, .hero-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* 画像を少し暗くして文字を見やすく */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 11, 11, 0.3) 0%,
+    rgba(11, 11, 11, 0.6) 100%
+  );
 }
 
-.hero-text {
-  position: absolute;
-  bottom: 80px;
-  left: 20px;
+.main-text, .hero-text {
+  position: relative;
   z-index: 2;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .en-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
+  font-size: 48px;
   line-height: 1.2;
-  margin-bottom: 12px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .ja-title {
   font-size: 14px;
-  letter-spacing: 2px;
-  color: #dddddd;
+  letter-spacing: 4px;
+  color: #e0e0e0;
 }
 
 /* コンセプト */
 .concept {
-  padding: 60px 20px;
-  background-color: #1a1a1a;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  text-align: center;
 }
 
 .concept h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 30px;
 }
 
 .concept p {
-  font-size: 13px;
-  color: #aaaaaa;
-  line-height: 1.8;
+  font-size: 14px;
+  color: #a0a0a0;
+  line-height: 2.2;
 }
 
 /* カードリスト */
 .card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .card {
   position: relative;
-  height: 160px;
+  height: 380px;
   background-size: cover;
   background-position: center;
-  display: block;
-  text-decoration: none;
-  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s ease, border-color 0.5s ease;
 }
 
 .card-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(11, 11, 11, 0.85) 0%,
+    rgba(11, 11, 11, 0.2) 100%
+  );
+  transition: opacity 0.5s ease;
 }
 
 .card-content {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
+  position: relative;
   z-index: 2;
+  transition: transform 0.5s ease;
 }
 
 .card-content h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 5px;
 }
 
 .card-content p {
   font-size: 12px;
-  color: #ccc;
+  color: #b3b3b3;
+  letter-spacing: 1px;
 }
 
-/* サービス詳細カード */
-.service-detail {
-  padding: 60px 20px;
+/* カード ホバーエフェクト */
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.section-title-wrap {
-  margin-bottom: 30px;
+.card:hover .card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(11, 11, 11, 0.95) 0%,
+    rgba(11, 11, 11, 0.3) 100%
+  );
 }
 
-.sub-line {
-  display: block;
-  width: 30px;
-  height: 1px;
-  background-color: #888;
-  margin-bottom: 10px;
+.card:hover .card-content {
+  transform: translateY(-5px);
 }
 
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  letter-spacing: 2px;
-}
+/* ==========================================================================
+   4. 下層ページ共通・固有スタイル
+   ========================================================================== */
 
-.detail-card {
-  background-color: #222222;
-  border-radius: 16px; /* 画像と同じ大きな角丸 */
-  padding: 20px;
-  overflow: hidden;
-}
-
-.detail-img img {
+/* --- A. 会社概要（COMPANY）--- */
+.info-table {
   width: 100%;
-  border-radius: 12px;
-  display: block;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.info-table th, 
+.info-table td {
+  padding: 22px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.info-table th {
+  width: 28%;
+  color: #8a8a8a;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+.info-table td {
+  color: #e5e5e5;
+}
+
+/* --- B. サービス（SERVICE）--- */
+.menu-category {
+  margin-bottom: 50px;
+}
+
+.menu-category h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #ffffff;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 20px;
 }
 
-.detail-text h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
 }
 
-.detail-text .lead {
+.menu-name {
+  color: #d0d0d0;
+}
+
+.menu-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* --- C. お問い合わせ（CONTACT）--- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
   font-size: 13px;
-  color: #ccc;
-  margin-bottom: 20px;
+  color: #a0a0a0;
+  letter-spacing: 1px;
 }
 
-.detail-text ul {
-  list-style: none;
+.form-group label span {
+  color: #c97a7a;
+  margin-left: 4px;
 }
 
-.detail-text li {
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  background-color: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  border-color: #ffffff;
+}
+
+.form-group select option {
+  background-color: #141414;
+  color: #ffffff;
+}
+
+.btn-submit {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #ffffff;
+  color: #0b0b0b;
+  border: 1px solid #ffffff;
   font-size: 13px;
-  color: #aaa;
-  position: relative;
-  padding-left: 15px;
-  margin-bottom: 8px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.detail-text li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: #888;
+.btn-submit:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   5. レスポンシブ対応（スマホ・タブレット表示）
+   ========================================================================== */
+@media (max-width: 960px) {
+  .card-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  .nav-menu {
+    display: none; /* スマホ時はメニューを折りたたむ設計 */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .en-title {
+    font-size: 32px;
+  }
+
+  .ja-title {
+    font-size: 12px;
+  }
+
+  .concept {
+    padding: 80px 20px;
+  }
+
+  .concept h2 {
+    font-size: 18px;
+  }
+
+  .container {
+    padding-top: 100px;
+  }
+
+  .info-table th, 
+  .info-table td {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .info-table th {
+    border-bottom: none;
+    color: #ffffff;
+  }
+
+  .info-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+    padding: 10px 0;
+  }
 }

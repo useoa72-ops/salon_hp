@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT | FAV SALON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo"><a href="index.html">FAV SALON</a></div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html#concept">CONCEPT</a></li>
+        <li><a href="company.html">COMPANY</a></li>
+        <li><a href="service.html">SERVICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="reserve.html" class="btn-reserve">WEB RESERVATION</a>
+    </div>
+  </header>
+
+  <main style="padding-top: 120px;" class="container">
+    <div class="page-title">
+      <h1>CONTACT</h1>
+      <p>— お問い合わせ</p>
+    </div>
+
+    <form class="contact-form" action="#" method="post">
+      <div class="form-group">
+        <label>お名前 <span>*</span></label>
+        <input type="text" placeholder="山田 太郎" required>
+      </div>
+
+      <div class="form-group">
+        <label>メールアドレス <span>*</span></label>
+        <input type="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>お問い合わせ種別</label>
+        <select>
+          <option>ご予約・施術に関するご質問</option>
+          <option>採用について</option>
+          <option>その他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>メッセージ <span>*</span></label>
+        <textarea rows="6" placeholder="お問い合わせ内容をご入力ください" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">送信する</button>
+    </form>
+  </main>
+
+</body>
+</html>
