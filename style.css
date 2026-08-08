@@ -217,8 +217,8 @@ img {
 .main-text{
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 0 50px;
+  text-align: left;
+  padding-left: 10%;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -233,6 +233,7 @@ img {
   color: #ffffff;
   margin-bottom: 20px;
   white-space: normal;
+  text-align: left;
  
 }
 
@@ -240,6 +241,8 @@ img {
   font-size: 14px;
   letter-spacing: 4px;
   color: #e0e0e0;
+  text-align: left;
+  display: block;
 }
 /* --- PC（画面幅 1024px 以上）のときだけ適用するスタイル --- */
 @media screen and (min-width: 1024px) {
