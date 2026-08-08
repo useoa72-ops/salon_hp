@@ -222,6 +222,7 @@ img {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .en-title {
@@ -232,6 +233,7 @@ img {
   color: #ffffff;
   margin-bottom: 20px;
   white-space: normal;
+  text-align: center;
 }
 
 .ja-title {
@@ -248,7 +250,7 @@ img {
 
   .main-image {
     background-position: center 25%; /* PCの大画面で顔と肩がベストな位置に映るよう微調整 */
-  }
+    padding-top :200px; }
 }
 
 /* コンセプト */
