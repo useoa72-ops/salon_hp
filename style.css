@@ -15,11 +15,12 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiYo, sans-serif;
+/* 英字・和文ともに高級感のある明朝系フォントを指定 */
+  font-family: 'Cormorant Garamond', "Yu Mincho", "游明朝", "YuMincho", "HG明朝E", "MS P明朝", Georgia, serif;
   background-color: #0b0b0b;
   color: #e5e5e5;
   line-height: 1.8;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em; /* 文字間隔をやや広げてエレガントに */
   overflow-x: hidden;
 }
 
@@ -185,7 +186,7 @@ img {
   min-height: 600px;
 }
 
-.main-image, .hero-image {
+.main-image {
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -197,7 +198,7 @@ img {
   justify-content: center;
 }
 
-.main-overlay, .hero-overlay {
+.main-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -210,7 +211,7 @@ img {
   );
 }
 
-.main-text, .hero-text {
+.main-text{
   position: relative;
   z-index: 2;
   text-align: center;
