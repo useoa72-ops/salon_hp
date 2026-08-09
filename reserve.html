@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESERVATION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">FAV SALON</a>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html#concept">CONCEPT</a></li>
+                <li><a href="company.html">COMPANY</a></li>
+                <li><a href="service.html">SERVICE</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <a href="reserve.html" class="btn-reserve">WEB RESERVATION</a>
+        </div>
+
+    </header>
+
+    <main style="padding-top: 120px;" class="container">
+        <div class="page-title">
+            <h1>
+                RESERVATION
+            </h1>
+            <p>WEB予約</p>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+                <label>お名前 <span>*</span></label>
+                <input type="text" placeholder="山田 太郎" required>
+            </div>
+
+            <div class="form-group">
+                <label>メールアドレス <span>*</span></label>
+                <input type="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>お電話番号<span>*</span></label>
+                <input type="tell" placeholder="090-1234-5678" required>
+            </div>
+
+            <div class="form-group">
+                <label>ご希望メニュー<span>*</span></label>
+                <select required>
+                    <option value="">
+                        選択してください
+                    </option>
+                    <option>デザインカット（シャンプー・ブロー込）¥8800</option>
+                    <option>前髪カット ¥2200</option>
+                    <option>オーガニックフルカラー　¥9900</option>
+                    <option>ハイライト/インナーカラー ¥13200~</option>
+                    <option>プレミアム髪質改善トリートメント ¥12100</option>
+                    <option>オーガニックヘッドスパ（45分）¥7700</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>第１希望日時 <span>*</span></label>
+                <input type="datetime-local" required>
+            </div>
+            <div class="form-group">
+                <label>第２希望日時 <span>*</span></label>
+                <input type="datetime-local" required>
+            </div>
+            <div class="form-group">
+                <label>第３希望日時 <span>*</span></label>
+                <input type="datetime-local" required>
+            </div>
+            <div class="form-group">
+                <label>スタイリスト指名欄 <span>*</span></label>
+                <textarea rows="1" placeholder="田中太郎"></textarea>
+            </div>
+            <div class="form-group">
+                <label>ご要望・ご相談など</label>
+                <textarea rows="3" placeholder="髪のお悩みやご要望があればご記入ください。"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">予約を確定する</button>
+        </form>
+
+    </main>
+
+
+</body>
+
+</html>

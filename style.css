@@ -3,175 +3,178 @@
 /* ==========================================================================
    1. リセット & 共通ベース設定
    ========================================================================== */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-/* 英字・和文ともに高級感のある明朝系フォントを指定 */
-  font-family: 'Cormorant Garamond', "Yu Mincho", "游明朝", "YuMincho", "HG明朝E", "MS P明朝", Georgia, serif;
-  background-color: #0b0b0b;
-  color: #e5e5e5;
-  line-height: 1.8;
-  letter-spacing: 0.08em; /* 文字間隔をやや広げてエレガントに */
-  overflow-x: hidden;
+    /* 英字・和文ともに高級感のある明朝系フォントを指定 */
+    font-family: 'Cormorant Garamond', "Yu Mincho", "游明朝", "YuMincho", "HG明朝E", "MS P明朝", Georgia, serif;
+    background-color: #0b0b0b;
+    color: #e5e5e5;
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+    /* 文字間隔をやや広げてエレガントに */
+    overflow-x: hidden;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s ease;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
 }
 
 /* 共通コンテナ */
 .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 20px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
 }
 
 /* 下層ページ タイトルスタイル */
 .page-title {
-  text-align: center;
-  margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .page-title h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  color: #ffffff;
-  margin-bottom: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin-bottom: 8px;
 }
 
 .page-title p {
-  font-size: 13px;
-  color: #8a8a8a;
-  letter-spacing: 2px;
+    font-size: 13px;
+    color: #8a8a8a;
+    letter-spacing: 2px;
 }
 
 /* ==========================================================================
    2. ヘッダー & ナビゲーション
    ========================================================================== */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  background-color: rgba(11, 11, 11, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color: rgba(11, 11, 11, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logo a {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: #ffffff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #ffffff;
 }
 
 /* ナビゲーションメニュー */
 .nav-menu ul {
-  display: flex;
-  list-style: none;
-  gap: 32px;
+    display: flex;
+    list-style: none;
+    gap: 32px;
 }
 
 .nav-menu a {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  letter-spacing: 2px;
-  color: #b3b3b3;
-  position: relative;
-  padding: 5px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #b3b3b3;
+    position: relative;
+    padding: 5px 0;
 }
 
 .nav-menu a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #ffffff;
-  transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 .nav-menu a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 /* 右側エリア（予約ボタン） */
 .header-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 /* Web予約ボタン（高級感のあるホバー演出） */
 .btn-reserve {
-  display: inline-block;
-  padding: 10px 24px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: transparent;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: inline-block;
+    padding: 10px 24px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-reserve:hover {
-  background-color: #ffffff;
-  color: #0b0b0b;
-  border-color: #ffffff;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    background-color: #ffffff;
+    color: #0b0b0b;
+    border-color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 /* ハンバーガーボタン（将来的なJS拡張用） */
 .hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 14px;
-  padding: 0;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 14px;
+    padding: 0;
 }
 
 .hamburger span {
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #ffffff;
-  transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
 }
 
 /* ==========================================================================
@@ -180,180 +183,182 @@ img {
 
 /* メインビジュアル */
 .main {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
 }
 
 .main-image {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top :100px;
-  box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 100px;
+    box-sizing: border-box;
 }
 
 .main-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(11, 11, 11, 0.3) 0%,
-    rgba(11, 11, 11, 0.6) 100%
-  );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(11, 11, 11, 0.3) 0%,
+            rgba(11, 11, 11, 0.6) 100%);
 }
 
-.main-text{
-  position: relative;
-  z-index: 2;
-  text-align: left;
-  padding-left: 20%;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
+.main-text {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding-left: 20%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .en-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  line-height: 1.2;
-  letter-spacing: 3px;
-  color: #ffffff;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  white-space: normal;
-  text-align: left;
- 
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    white-space: normal;
+    text-align: left;
+
 }
 
 .ja-title {
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: #e0e0e0;
-  margin-left: 20px;
-  text-align: left;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #e0e0e0;
+    margin-left: 20px;
+    text-align: left;
 
 }
+
 /* --- PC（画面幅 1024px 以上）のときだけ適用するスタイル --- */
 @media screen and (min-width: 1024px) {
-  .main {
-    height: 140vh; /* PCの時だけ画面1.4倍分に伸ばして縦長にする */
-    min-height: 950px; /* 大画面モニターでも途切れない最小高さを確保 */
-  }
+    .main {
+        height: 140vh;
+        /* PCの時だけ画面1.4倍分に伸ばして縦長にする */
+        min-height: 950px;
+        /* 大画面モニターでも途切れない最小高さを確保 */
+    }
 
-  .main-image {
-    background-position: center 25%; /* PCの大画面で顔と肩がベストな位置に映るよう微調整 */
-    padding-top :200px; }
+    .main-image {
+        background-position: center 25%;
+        /* PCの大画面で顔と肩がベストな位置に映るよう微調整 */
+        padding-top: 200px;
+    }
 }
 
 /* コンセプト */
 .concept {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 120px 20px;
-  text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 20px;
+    text-align: center;
 }
 
 .concept h2 {
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  line-height: 1.8;
-  color: #ffffff;
-  margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 30px;
 }
 
 .concept p {
-  font-size: 14px;
-  color: #a0a0a0;
-  line-height: 2.2;
+    font-size: 14px;
+    color: #a0a0a0;
+    line-height: 2.2;
 }
 
 /* カードリスト */
 .card-list {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px 120px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 120px;
+    display: grid;
+    /*display: grid; は、CSSで要素を格子状（縦横の2次元）に配置するためのレイアウト手法です。親要素に指定することで、子要素をきれいな表やタイル状に並べることができます。
+  基本的な使い方コンテナの作成: 親要素に display: grid; を指定します。列の指定: grid-template-columns で列の数や幅を決めます（例: repeat(3, 1fr) で3等分）。行の指定: grid-template-rows で行の高さを決めます。
+  隙間の設定: gap プロパティでアイテム同士のすき間を簡単に調整できます。主な特徴2次元レイアウト: 縦と横の行・列を同時にコントロールできます。柔軟なサイズ指定: fr 単位を使うと、画面幅に合わせた割合でサイズを自動調整できます。*/
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .card {
-  position: relative;
-  height: 380px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 30px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.5s ease, border-color 0.5s ease;
+    position: relative;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease, border-color 0.5s ease;
 }
 
 .card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(11, 11, 11, 0.85) 0%,
-    rgba(11, 11, 11, 0.2) 100%
-  );
-  transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+            rgba(11, 11, 11, 0.85) 0%,
+            rgba(11, 11, 11, 0.2) 100%);
+    transition: opacity 0.5s ease;
 }
 
 .card-content {
-  position: relative;
-  z-index: 2;
-  transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease;
 }
 
 .card-content h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  letter-spacing: 3px;
-  color: #ffffff;
-  margin-bottom: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 5px;
 }
 
 .card-content p {
-  font-size: 12px;
-  color: #b3b3b3;
-  letter-spacing: 1px;
+    font-size: 12px;
+    color: #b3b3b3;
+    letter-spacing: 1px;
 }
 
 /* カード ホバーエフェクト */
 .card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .card:hover .card-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(11, 11, 11, 0.95) 0%,
-    rgba(11, 11, 11, 0.3) 100%
-  );
+    background: linear-gradient(to top,
+            rgba(11, 11, 11, 0.95) 0%,
+            rgba(11, 11, 11, 0.3) 100%);
 }
 
 .card:hover .card-content {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 /* ==========================================================================
@@ -362,196 +367,206 @@ img {
 
 /* --- A. 会社概要（COMPANY）--- */
 .info-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.info-table th, 
+.info-table th,
 .info-table td {
-  padding: 22px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 14px;
-  line-height: 1.8;
+    padding: 22px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 .info-table th {
-  width: 28%;
-  color: #8a8a8a;
-  font-weight: normal;
-  text-align: left;
-  vertical-align: top;
+    width: 28%;
+    color: #8a8a8a;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top;
 }
 
 .info-table td {
-  color: #e5e5e5;
+    color: #e5e5e5;
 }
 
 /* --- B. サービス（SERVICE）--- */
 .menu-category {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .menu-category h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: #ffffff;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #ffffff;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
 }
 
 .menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
 }
 
 .menu-name {
-  color: #d0d0d0;
+    color: #d0d0d0;
 }
 
 .menu-price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  color: #ffffff;
-  letter-spacing: 1px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 /* --- C. お問い合わせ（CONTACT）--- */
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .form-group label {
-  font-size: 13px;
-  color: #a0a0a0;
-  letter-spacing: 1px;
+    font-size: 13px;
+    color: #a0a0a0;
+    letter-spacing: 1px;
 }
 
 .form-group label span {
-  color: #c97a7a;
-  margin-left: 4px;
+    color: #c97a7a;
+    margin-left: 4px;
 }
 
-.form-group input, 
-.form-group select, 
+.form-group input,
+.form-group select,
 .form-group textarea {
-  width: 100%;
-  padding: 14px;
-  background-color: #141414;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 0;
-  color: #ffffff;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s ease;
+    width: 100%;
+    padding: 14px;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus {
-  border-color: #ffffff;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus .form-group input [type="datetime-local"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    border-color: #ffffff;
 }
 
 .form-group select option {
-  background-color: #141414;
-  color: #ffffff;
+    background-color: #141414;
+    color: #ffffff;
 }
 
 .btn-submit {
-  margin-top: 20px;
-  padding: 16px;
-  background-color: #ffffff;
-  color: #0b0b0b;
-  border: 1px solid #ffffff;
-  font-size: 13px;
-  letter-spacing: 3px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    margin-top: 20px;
+    padding: 16px;
+    background-color: #ffffff;
+    color: #0b0b0b;
+    border: 1px solid #ffffff;
+    font-size: 13px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-submit:hover {
-  background-color: transparent;
-  color: #ffffff;
+    background-color: transparent;
+    color: #ffffff;
 }
 
 /* ==========================================================================
    5. レスポンシブ対応（スマホ・タブレット表示）
    ========================================================================== */
 @media (max-width: 960px) {
-  .card-list {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+    .card-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-  .card {
-    height: 260px;
-  }
+    .card {
+        height: 260px;
+    }
 }
 
 @media (max-width: 768px) {
-  .header {
-    padding: 0 20px;
-    height: 70px;
-  }
+    .header {
+        padding: 0 20px;
+        height: 70px;
+    }
 
-  .nav-menu {
-    display: none; /* スマホ時はメニューを折りたたむ設計 */
-  }
+    .nav-menu {
+        display: none;
+        /* スマホ時はメニューを折りたたむ設計 */
+    }
 
-  .hamburger {
-    display: flex;
-  }
+    .hamburger {
+        display: flex;
+    }
 
-  .en-title {
-    font-size: 32px;
-  }
+    .en-title {
+        font-size: 32px;
+    }
 
-  .ja-title {
-    font-size: 12px;
-  }
+    .ja-title {
+        font-size: 12px;
+    }
 
-  .concept {
-    padding: 80px 20px;
-  }
+    .concept {
+        padding: 80px 20px;
+    }
 
-  .concept h2 {
-    font-size: 18px;
-  }
+    .concept h2 {
+        font-size: 18px;
+    }
 
-  .container {
-    padding-top: 100px;
-  }
+    .container {
+        padding-top: 100px;
+    }
 
-  .info-table th, 
-  .info-table td {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-  }
+    .info-table th,
+    .info-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
 
-  .info-table th {
-    border-bottom: none;
-    color: #ffffff;
-  }
+    .info-table th {
+        border-bottom: none;
+        color: #ffffff;
+    }
 
-  .info-table tr {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: block;
-    padding: 10px 0;
-  }
+    .info-table tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
+        padding: 10px 0;
+    }
 }
